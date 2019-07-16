@@ -9,9 +9,10 @@
         width: 70px;
         height: 35px;
         background: grey;
-        margin: 2px 2px 2px 2px;
+        margin: 0px 2px 0px 2px;
         color: black;
         display: flex;
+        border-radius: 8px;
         justify-content: center;
         align-items: center;
         cursor: pointer;
@@ -23,7 +24,8 @@
         width: 70px;
         height: 35px;
         background: cornflowerblue;
-        margin: 2px 2px 2px 2px;
+        margin: 0px 2px 0px 2px;
+         border-radius: 8px;
         color: white;
         display: flex;
         justify-content: center;
@@ -31,31 +33,69 @@
         cursor: pointer;
     }
     .butons1:hover{
-            background: deepskyblue;}
+            background: deepskyblue;
+    }
+     .number{
+         width: 290px;
+         height: 50px;
+         padding-right: 5px;
+         border: solid 0.7px black;
+         border-radius: 7px;
+         background: white;
+         display: flex;
+         justify-content: flex-end;
+         align-items: center;
+         margin-top: 80px;
+         font-weight: bold;
+         font-size: 20px;
+     }
     </style>
 </head>
-<body style="display: flex; justify-content: center; flex-direction: column; align-items: center">
-<div style="margin-top:20px; ">
-    <p><div class="butons">(</div>
-    <div class="butons">)</div>
+<body style="display: flex; justify-content: center; flex-direction: column; align-items: center; background: honeydew">
+    <div class="number" id="numbe"></div>
+<div style="margin-top:5px; display: flex; vertical-align: top">
+    <div onclick="skobka_left()" class="butons">(</div>
+    <div onclick="skobka_right()" class="butons">)</div>
     <div class="butons">%</div>
-    <div class="butons">AC</div></p>
-    <p><div class="butons">7</div>
-    <div class="butons">8</div>
-    <div class="butons">9</div>
-    <div class="butons">÷</div></p>
-    <div class="butons">4</div>
-    <div class="butons">5</div>
-    <div class="butons">6</div>
-    <div class="butons">×</div>
-    <div class="butons">1</div>
-    <div class="butons">2</div>
-    <div class="butons">3</div>
-    <div class="butons">-</div>
-    <div class="butons">0</div>
-    <div class="butons">.</div>
+    <div onclick="destroy()" class="butons">AC</div></div>
+<div style="margin-top:5px; display: flex; vertical-align: top">
+    <div onclick="vvod('7')" class="butons">7</div>
+    <div onclick="vvod('8')" class="butons">8</div>
+    <div onclick="vvod('9')" class="butons">9</div>
+    <div class="butons">÷</div></div>
+<div style="margin-top:5px; display: flex; vertical-align: top">
+    <div onclick="vvod('4')" class="butons">4</div>
+    <div onclick="vvod('5')" class="butons">5</div>
+    <div onclick="vvod('6')" class="butons">6</div>
+    <div class="butons">×</div></div>
+<div style="margin-top:5px; display: flex; vertical-align: top">
+    <div onclick="vvod('1')" class="butons">1</div>
+    <div onclick="vvod('2')" class="butons">2</div>
+    <div onclick="vvod('3')" class="butons">3</div>
+    <div class="butons">-</div></div>
+<div style="margin-top:5px; display: flex; vertical-align: top">
+    <div onclick="vvod('0')" class="butons">0</div>
+    <div onclick="pointt()" class="butons">.</div>
     <div class="butons1">=</div>
-    <div class="butons">+</div>
+    <div class="butons">+</div></div>
 </div>
 </body>
+<script>
+    function vvod(letter) {
+         document.getElementById("numbe").innerHTML += letter
+    }
+    function destroy() {
+         document.getElementById("numbe").innerHTML = ""
+    }
+    function pointt() {
+        if(document.getElementById("numbe").innerHTML.length>0&& )
+            document.getElementById("numbe").innerHTML += "."
+    }
+    function skobka_left() {
+        document.getElementById("numbe").innerHTML += "("
+    }
+    function skobka_right() {
+        document.getElementById("numbe").innerHTML += ")"
+    }
+</script>
 </html>
