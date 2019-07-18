@@ -56,28 +56,28 @@
 <div style="margin-top:5px; display: flex; vertical-align: top">
     <div onclick="skobka_left()" class="butons">(</div>
     <div onclick="skobka_right()" class="butons">)</div>
-    <div class="butons">%</div>
+    <div onclick="percent()" class="butons">%</div>
     <div onclick="destroy()" class="butons">AC</div></div>
 <div style="margin-top:5px; display: flex; vertical-align: top">
     <div onclick="vvod('7')" class="butons">7</div>
     <div onclick="vvod('8')" class="butons">8</div>
     <div onclick="vvod('9')" class="butons">9</div>
-    <div class="butons">÷</div></div>
+    <div onclick="delenie()" class="butons">/</div></div>
 <div style="margin-top:5px; display: flex; vertical-align: top">
     <div onclick="vvod('4')" class="butons">4</div>
     <div onclick="vvod('5')" class="butons">5</div>
     <div onclick="vvod('6')" class="butons">6</div>
-    <div class="butons">×</div></div>
+    <div onclick="umnoj()" class="butons">*</div></div>
 <div style="margin-top:5px; display: flex; vertical-align: top">
     <div onclick="vvod('1')" class="butons">1</div>
     <div onclick="vvod('2')" class="butons">2</div>
     <div onclick="vvod('3')" class="butons">3</div>
-    <div class="butons">-</div></div>
+    <div onclick="minus()" class="butons">-</div></div>
 <div style="margin-top:5px; display: flex; vertical-align: top">
     <div onclick="vvod('0')" class="butons">0</div>
     <div onclick="pointt()" class="butons">.</div>
-    <div class="butons1">=</div>
-    <div class="butons">+</div></div>
+    <div onclick="ravno()" class="butons1">=</div>
+    <div onclick="plus()" class="butons">+</div></div>
 </div>
 </body>
 <script>
@@ -88,7 +88,7 @@
          document.getElementById("numbe").innerHTML = ""
     }
     function pointt() {
-        if(document.getElementById("numbe").innerHTML.length>0&& )
+        if(document.getElementById("numbe").innerHTML.length>0)
             document.getElementById("numbe").innerHTML += "."
     }
     function skobka_left() {
@@ -96,6 +96,28 @@
     }
     function skobka_right() {
         document.getElementById("numbe").innerHTML += ")"
+    }
+    function percent() {
+       if(document.getElementById("numbe").innerHTML.length>0)
+            document.getElementById("numbe").innerHTML += "%"
+    }
+    function plus() {
+      if(document.getElementById("numbe").innerHTML.length>0)
+            document.getElementById("numbe").innerHTML += "+"
+    }
+    function minus() {
+      document.getElementById("numbe").innerHTML += "-"
+    }
+    function umnoj() {
+      if(document.getElementById("numbe").innerHTML.length>0)
+            document.getElementById("numbe").innerHTML += "*"
+    }
+    function delenie() {
+      if(document.getElementById("numbe").innerHTML.length>0)
+            document.getElementById("numbe").innerHTML += "/"
+    }
+    function ravno() {
+      document.getElementById("numbe").innerHTML = eval(document.getElementById("numbe").innerHTML)
     }
 </script>
 </html>
